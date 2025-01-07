@@ -2,6 +2,7 @@
   "name": "shokhaa/tg-bot-lib",
   "description": "Mini lib TELEGRAM bot php",
   "type": "library",
+  "version": "1.0.0",
   "keywords": [
     "php",
     "extension",
