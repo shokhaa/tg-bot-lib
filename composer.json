@@ -1,0 +1,27 @@
+{
+  "name": "shokhaa/tg-bot-lib",
+  "description": "Mini lib TELEGRAM bot php",
+  "type": "library",
+  "keywords": [
+    "php",
+    "extension",
+    "telegram",
+    "bot"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Shokhaa",
+      "email": "muxawa@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Shokhaa\\BotLib\\": "src/"
+    }
+  }
+}
