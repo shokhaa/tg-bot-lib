@@ -45,8 +45,17 @@ class Bot
             $data['chat_id'] = $this->chatId;
         }
 
-        $requestUrl = $this->apiUrl . $this->config['token'] . "/$method?" . http_build_query($data);
-        $response = file_get_contents($requestUrl);
+
+        $requestUrl = $this->apiUrl . $this->config['token'] . "/$method";
+        $options = [
+            'http' => [
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data),
+            ],
+        ];
+        $context  = stream_context_create($options);
+        $response = file_get_contents($requestUrl, false, $context);
 
         if ($this->connection !== null) {
             $this->connection->insert($this->chatId, $this->request, $requestUrl, $response);
